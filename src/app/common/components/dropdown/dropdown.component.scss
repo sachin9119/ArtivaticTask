@@ -1,0 +1,11 @@
+
+::ng-deep .dropdown-menu{
+    width: 200px;
+    overflow-y: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size:12px;
+}
+

@@ -1,0 +1,25 @@
+<div class="container cstm-container">
+    <div class="row dropdown-container">
+        <app-dropdown [items]="states" [dropDownTitle]="'Select state'" (selectedItem)="getCitiesByState($event)">
+        </app-dropdown>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 *ngIf="selectedState" >Showing cities for {{selectedState}}</h4>
+                    <app-table [tableBody]="cities" [tableConfig]="{page:1,pageSize:9}"
+                        (currentRow)="onRowClick($event)">
+                    </app-table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <app-google-map [markers]="markers" [keyToSearch]="selectedState"></app-google-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
